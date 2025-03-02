@@ -24,3 +24,19 @@ document.addEventListener("DOMContentLoaded", function () {
         card.innerHTML += "Updated";
     });
 });
+
+//Task 3 - Dynamic Inventory Management – Adding and Removing Items
+function addInventoryItem(productName) {
+    let inventoryList = document.getElementById("inventoryList");
+
+    let listItem = document.createElement("li");
+    listItem.setAttribute("class", "product-item");
+    listItem.textContent = productName;
+
+    // Remove item when clicked
+    listItem.addEventListener("click", function () {
+        inventoryList.removeChild(listItem);
+    });
+
+    inventoryList.appendChild(listItem);
+}
