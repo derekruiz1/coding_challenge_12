@@ -12,3 +12,15 @@ document.addEventListener("DOMContentLoaded", function () {
     // Adding the metric card to the dashboard
     dashboard1.appendChild(revenueCard);
 });
+
+//Task 2 - Updating Dashboard Metrics - Working with NodeLists and Arrays 
+document.addEventListener("DOMContentLoaded", function () {
+    let metricCards = document.querySelectorAll(".metric-card");
+    let metricArray = Array.from(metricCards);
+
+    // Updating Metric Card
+    metricArray.forEach(card => {
+        card.style.backgroundColor = "#d0ffba";
+        card.innerHTML += "Updated";
+    });
+});
