@@ -40,3 +40,24 @@ function addInventoryItem(productName) {
 
     inventoryList.appendChild(listItem);
 }
+
+// Task 4: Customer Section with Event Bubbling
+let customerSection = document.getElementById("customerSection");
+
+let customers = ["Alice", "Bob", "Charlie"];
+customers.forEach(name => {
+    let customerCard = document.createElement("div");
+    customerCard.setAttribute("class", "customer-card");
+    customerCard.textContent = name;
+
+    customerCard.addEventListener("click", function (event) {
+        console.log("Customer card clicked: " + name);
+        event.stopPropagation(); 
+    });
+
+    customerSection.appendChild(customerCard);
+});
+
+customerSection.addEventListener("click", function () {
+    console.log("Customer section clicked");
+});
